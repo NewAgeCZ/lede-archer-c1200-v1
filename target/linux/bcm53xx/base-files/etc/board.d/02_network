@@ -11,7 +11,8 @@ board_config_update
 board=$(board_name)
 
 case "$board" in
-tenda,ac9)
+tenda,ac9| \
+tplink,archer-c1200-v1)
 	ucidef_add_switch "switch0" \
 		"1:lan" "2:lan" "3:lan" "4:lan" "8@eth0" "0:wan" "5@eth1"
 	board_config_flush
