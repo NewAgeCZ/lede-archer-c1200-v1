@@ -21,7 +21,7 @@ Signed-off-by: Rafał Miłecki <zajec5@gmail.com>
  
  #include "b53_regs.h"
  #include "b53_priv.h"
-@@ -1578,6 +1579,28 @@ static int b53_switch_init(struct b53_de
+@@ -1578,6 +1579,29 @@ static int b53_switch_init(struct b53_de
  			return ret;
  	}
  
@@ -36,7 +36,8 @@ Signed-off-by: Rafał Miłecki <zajec5@gmail.com>
 +		sw_dev->cpu_port = 8;
 +
 +	/* Enable extra ports */
-+	if (of_machine_is_compatible("tenda,ac9"))
++	if (of_machine_is_compatible("tenda,ac9") ||
++		of_machine_is_compatible("tplink,archer-c1200-v1"))
 +		dev->enabled_ports |= BIT(5);
 +
 +	/*
