@@ -316,6 +316,16 @@ define Device/tenda-ac9
 endef
 TARGET_DEVICES += tenda-ac9
 
+define Device/tplink-archer-c1200-v1
+  DEVICE_TITLE := TP-LINK Archer C1200 V1
+  DEVICE_PACKAGES := $(B43) $(USB2_PACKAGES)
+  IMAGES := bin
+  IMAGE/bin := append-rootfs | bcm53xx-tplink-safeloader
+  TPLINK_BOARD := ARCHER-C1200-V1
+  DEVICE_DTS := bcm47189-tplink-archer-c1200-v1
+endef
+TARGET_DEVICES += tplink-archer-c1200-v1
+
 define Device/tplink-archer-c5-v2
   DEVICE_TITLE := TP-LINK Archer C5 V2
   DEVICE_PACKAGES := $(B43) $(USB2_PACKAGES)
